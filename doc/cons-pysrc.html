@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>cons</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;cons
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="cons-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="cons-module.html">Module cons</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">pelix</tt><tt class="py-op">.</tt><tt class="py-name">ipopo</tt><tt class="py-op">.</tt><tt class="py-name">decorators</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ComponentFactory</tt><tt class="py-op">,</tt> <tt class="py-name">Requires</tt><tt class="py-op">,</tt> <tt class="py-name">Instantiate</tt><tt class="py-op">,</tt> \ </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line">    <tt class="py-name">Validate</tt><tt class="py-op">,</tt> <tt class="py-name">Invalidate</tt><tt class="py-op">,</tt> <tt class="py-name">Provides</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">pelix</tt><tt class="py-op">.</tt><tt class="py-name">shell</tt> <tt class="py-keyword">import</tt> <tt class="py-name">SHELL_COMMAND_SPEC</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">netaddr</tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="ServiceConsumer"></a><div id="ServiceConsumer-def"><a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">ComponentFactory</tt><tt class="py-op">(</tt><tt class="py-string">"service_consumer-factory"</tt><tt class="py-op">)</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment"># Dostep do uslug poprzez zdef. zmienne</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">Requires</tt><tt class="py-op">(</tt><tt class="py-string">'_generator'</tt><tt class="py-op">,</tt> <tt class="py-string">"generator"</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">Requires</tt><tt class="py-op">(</tt><tt class="py-string">'_rule'</tt><tt class="py-op">,</tt> <tt class="py-string">"drop_rule"</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-comment"># Shell do obslugi uslug</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">Provides</tt><tt class="py-op">(</tt><tt class="py-name">SHELL_COMMAND_SPEC</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">Instantiate</tt><tt class="py-op">(</tt><tt class="py-string">"service-consumer"</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt> <a class="py-toggle" href="#" id="ServiceConsumer-toggle" onclick="return toggle('ServiceConsumer');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="cons.ServiceConsumer-class.html">ServiceConsumer</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceConsumer-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ServiceConsumer-expanded"><a name="ServiceConsumer.__init__"></a><div id="ServiceConsumer.__init__-def"><a name="L14"></a><tt class="py-lineno">14</tt> <a class="py-toggle" href="#" id="ServiceConsumer.__init__-toggle" onclick="return toggle('ServiceConsumer.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="cons.ServiceConsumer-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceConsumer.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ServiceConsumer.__init__-expanded"><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">        Bundle wymanage przez klienta</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Variable cons.ServiceConsumer._generator=cons.ServiceConsumer-class.html#_generator"><a title="cons.ServiceConsumer._generator" class="py-name" href="#" onclick="return doclink('link-0', '_generator', 'link-0');">_generator</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Variable cons.ServiceConsumer._rule=cons.ServiceConsumer-class.html#_rule"><a title="cons.ServiceConsumer._rule" class="py-name" href="#" onclick="return doclink('link-1', '_rule', 'link-1');">_rule</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">Validate</tt> </tt>
+<a name="ServiceConsumer.validate"></a><div id="ServiceConsumer.validate-def"><a name="L22"></a><tt class="py-lineno">22</tt> <a class="py-toggle" href="#" id="ServiceConsumer.validate-toggle" onclick="return toggle('ServiceConsumer.validate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="cons.ServiceConsumer-class.html#validate">validate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">context</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceConsumer.validate-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ServiceConsumer.validate-expanded"><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"SERVICE CONSUMER STARTED"</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">Invalidate</tt> </tt>
+<a name="ServiceConsumer.invalidate"></a><div id="ServiceConsumer.invalidate-def"><a name="L25"></a><tt class="py-lineno">25</tt> <a class="py-toggle" href="#" id="ServiceConsumer.invalidate-toggle" onclick="return toggle('ServiceConsumer.invalidate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="cons.ServiceConsumer-class.html#invalidate">invalidate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">context</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceConsumer.invalidate-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ServiceConsumer.invalidate-expanded"><a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"SERVICE CONSUMER STOPPED"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="ServiceConsumer.get_namespace"></a><div id="ServiceConsumer.get_namespace-def"><a name="L28"></a><tt class="py-lineno">28</tt> <a class="py-toggle" href="#" id="ServiceConsumer.get_namespace-toggle" onclick="return toggle('ServiceConsumer.get_namespace');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="cons.ServiceConsumer-class.html#get_namespace">get_namespace</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceConsumer.get_namespace-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ServiceConsumer.get_namespace-expanded"><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"go"</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
+<a name="ServiceConsumer.get_methods"></a><div id="ServiceConsumer.get_methods-def"><a name="L31"></a><tt class="py-lineno">31</tt> <a class="py-toggle" href="#" id="ServiceConsumer.get_methods-toggle" onclick="return toggle('ServiceConsumer.get_methods');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="cons.ServiceConsumer-class.html#get_methods">get_methods</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceConsumer.get_methods-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ServiceConsumer.get_methods-expanded"><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-op">(</tt><tt class="py-string">"go"</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method cons.ServiceConsumer.command_line()=cons.ServiceConsumer-class.html#command_line"><a title="cons.ServiceConsumer.command_line" class="py-name" href="#" onclick="return doclink('link-2', 'command_line', 'link-2');">command_line</a></tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="ServiceConsumer.command_line"></a><div id="ServiceConsumer.command_line-def"><a name="L34"></a><tt class="py-lineno">34</tt> <a class="py-toggle" href="#" id="ServiceConsumer.command_line-toggle" onclick="return toggle('ServiceConsumer.command_line');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="cons.ServiceConsumer-class.html#command_line">command_line</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">io_handler</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceConsumer.command_line-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ServiceConsumer.command_line-expanded"><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">        Linia polecen</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-name">passage</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt id="link-3" class="py-name" targets="Variable drop_rule.DropRule.rules=drop_rule.DropRule-class.html#rules"><a title="drop_rule.DropRule.rules" class="py-name" href="#" onclick="return doclink('link-3', 'rules', 'link-3');">rules</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="cons.ServiceConsumer._rule" class="py-name" href="#" onclick="return doclink('link-4', '_rule', 'link-1');">_rule</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method drop_rule.DropRule.get_rule()=drop_rule.DropRule-class.html#get_rule"><a title="drop_rule.DropRule.get_rule" class="py-name" href="#" onclick="return doclink('link-5', 'get_rule', 'link-5');">get_rule</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-name">packets</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-name">passage</tt> <tt class="py-op">!=</tt> <tt class="py-string">'quit'</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">            <tt class="py-name">passage</tt> <tt class="py-op">=</tt> <tt class="py-name">io_handler</tt><tt class="py-op">.</tt><tt class="py-name">prompt</tt><tt class="py-op">(</tt><tt class="py-string">"Command:"</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">            <tt class="py-comment"># Zaladowane reguly</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">passage</tt> <tt class="py-op">==</tt> <tt class="py-string">"rules"</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">e</tt> <tt class="py-keyword">in</tt> <tt id="link-6" class="py-name"><a title="drop_rule.DropRule.rules" class="py-name" href="#" onclick="return doclink('link-6', 'rules', 'link-3');">rules</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">                    <tt class="py-keyword">print</tt> <tt class="py-name">e</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">            <tt class="py-comment"># Generacja pakietow</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">passage</tt> <tt class="py-op">==</tt> <tt class="py-string">'gen'</tt><tt class="py-op">:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">                <tt class="py-name">passage</tt> <tt class="py-op">=</tt> <tt class="py-name">io_handler</tt><tt class="py-op">.</tt><tt class="py-name">prompt</tt><tt class="py-op">(</tt><tt class="py-string">"Packets:"</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">xrange</tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">passage</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">                    <tt class="py-name">packets</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="cons.ServiceConsumer._generator" class="py-name" href="#" onclick="return doclink('link-7', '_generator', 'link-0');">_generator</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method generator.Generator.run()=generator.Generator-class.html#run"><a title="generator.Generator.run" class="py-name" href="#" onclick="return doclink('link-8', 'run', 'link-8');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">            <tt class="py-comment"># Sprawdzenie regul</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">passage</tt> <tt class="py-op">==</tt> <tt class="py-string">'check'</tt><tt class="py-op">:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">e</tt> <tt class="py-keyword">in</tt> <tt id="link-9" class="py-name"><a title="drop_rule.DropRule.rules" class="py-name" href="#" onclick="return doclink('link-9', 'rules', 'link-3');">rules</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">                    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">packets</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="cons.ServiceConsumer._rule" class="py-name" href="#" onclick="return doclink('link-10', '_rule', 'link-1');">_rule</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method drop_rule.DropRule.check_rule()=drop_rule.DropRule-class.html#check_rule"><a title="drop_rule.DropRule.check_rule" class="py-name" href="#" onclick="return doclink('link-11', 'check_rule', 'link-11');">check_rule</a></tt><tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"""   HELP: </tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-string">                            gen     =&gt;  generate packets </tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-string">                            rules   =&gt;  retrive loaded FW rules</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-string">                            check   =&gt;  check FW rules against generated packets</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"><tt class="py-string">                            quit    =&gt;  quit command-line</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"><tt class="py-string">                            """</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-name">io_handler</tt><tt class="py-op">.</tt><tt class="py-name">write_line</tt><tt class="py-op">(</tt><tt class="py-string">"Commandline left"</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Mon Feb 29 00:38:09 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
